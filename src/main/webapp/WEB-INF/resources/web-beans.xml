@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans  
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/context  
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+    <context:component-scan base-package="com.bookstore" />
+    
+    <context:annotation-config />
+    <!-- <bean id="userService" class="jbr.springmvc.service.UserServiceImpl" /> -->
+    
+    <!-- <bean id="userDao" class="jbr.springmvc.dao.UserDaoImpl" /> -->
+    
+	<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">    
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>    
+		<property name="url" value="jdbc:mysql://localhost:3306/bookstore"></property>    
+		<property name="username" value="root"></property>    
+		<property name="password" value="testing321"></property>    
+	</bean>    
+	    
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">    
+		<property name="dataSource" ref="datasource"></property>    
+	</bean>    
+	    
+	<bean id="empDao" class="com.bookstore.dao.EmpDao">    
+		<property name="template" ref="jdbcTemplate"></property>    
+	</bean>
+	<bean id="userDao" class="com.bookstore.dao.EmpDao">    
+		<property name="template" ref="jdbcTemplate"></property>    
+	</bean>
+	<bean id="bookDao" class="com.bookstore.dao.EmpDao">    
+		<property name="template" ref="jdbcTemplate"></property>    
+	</bean>
+	
+</beans>
