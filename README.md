@@ -95,13 +95,4 @@ create table bookstore.purchase_detail
 	date_purchased timestamp default now()
 );
 
-
-## Group Members:
-
-1. Adil Mohammed...............UGE/18689/11
-2. Yayesew Birhan..............UGE/18521/11
-3. Yesukal Mulu................UGE/18607/11
-4. Ayele H/Leul................UGE/18639/11
-5. Dejene Negash...............A/ue15930/10
-
-
+# Thanks
